@@ -1,0 +1,7 @@
+instalar_toba_2_6
+cd /opt/toba_2_6/proyectos
+echo ""
+echo "El servidor está levantado"
+echo " Ingrese a http://localhost/toba_editor/2.6/"
+echo ""
+/bin/bash

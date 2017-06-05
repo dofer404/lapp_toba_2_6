@@ -1,0 +1,3 @@
+set -x
+/etc/init.d/postgresql start
+/usr/sbin/apache2ctl restart

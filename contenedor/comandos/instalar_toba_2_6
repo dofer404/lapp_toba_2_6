@@ -1,0 +1,19 @@
+if [ $(ls /opt/toba_2_6/instalado 2>/dev/null) ]; then
+  echo ""
+  echo "Se encontró el archivo /opt/toba_2_6/instalado"
+  echo "Toba ya está instalado"
+  echo ""
+  cd /opt/toba_2_6/proyectos
+  iniciar_servicios
+else
+  set -x
+  cp /opt/toba_2_6/proyectos_src/* /opt/toba_2_6/proyectos/ -R
+  /etc/init.d/postgresql start
+  /opt/toba_2_6/bin/instalar
+  ln -s /opt/toba_2_6/instalacion/toba.conf /etc/apache2/sites-enabled/toba_2_6.conf
+  chown www-data /opt/toba_2_6/ -R
+  chown www-data /var/lib/php/ -R
+  /usr/sbin/apache2ctl -D BACKGROUND
+  touch /opt/toba_2_6/instalado
+  set +x
+fi

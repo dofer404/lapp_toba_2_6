@@ -1,0 +1,6 @@
+if [ $(docker images -f "dangling=true" -q) ]; then
+  echo "Eliminando imagenes descolgadas"
+  docker rmi $(docker images -f "dangling=true" -q)
+else
+  echo "No se encontraron imagenes descolgadas"
+fi

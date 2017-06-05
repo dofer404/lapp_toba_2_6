@@ -1,0 +1,4 @@
+set -x
+./aux/construir_imagen
+./aux/containerize_run
+set +x

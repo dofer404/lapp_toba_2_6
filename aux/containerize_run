@@ -1,0 +1,5 @@
+set -x
+docker rm /lapp_toba_2_6
+docker run -it -v $(pwd)/volumenes/proys:/opt/toba_2_6/proyectos/ -p 80:80 --name lapp_toba_2_6 lapp_toba_2_6 /bin/bash -c instalar_toba_2_6_luego_bash
+./aux/comprobar_imagenes_colgadas
+set +x

@@ -1,0 +1,2 @@
+docker build -t lapp_toba_2_6 .
+./aux/comprobar_imagenes_colgadas
